@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 
@@ -8,20 +8,20 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
 // Import routes
 const userRoutes = require('./routes/userRoutes');
-const productRoutes = require('./routes/productRoutes');
-const orderRoutes = require('./routes/orderRoutes');
-const paymentRoutes = require('./routes/paymentRoutes');
+// const productRoutes = require('./routes/productRoutes');
+// const orderRoutes = require('./routes/orderRoutes');
+// const paymentRoutes = require('./routes/paymentRoutes');
 
 // Use routes
 app.use('/api/users', userRoutes);
-app.use('/api/products', productRoutes);
-app.use('/api/orders', orderRoutes);
-app.use('/api/payment', paymentRoutes);
+// app.use('/api/products', productRoutes);
+// app.use('/api/orders', orderRoutes);
+// app.use('/api/payment', paymentRoutes);
 
 const PORT = process.env.PORT || 5000;
 
